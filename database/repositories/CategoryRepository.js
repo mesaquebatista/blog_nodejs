@@ -17,6 +17,13 @@ const CategoryRepository = {
     create(data) {
         let category = Category.create(data);
         return category;
+    },
+    delete(id) {
+        return Category.destroy({
+            where: {
+                id: id
+            }
+        });
     }
 }
 

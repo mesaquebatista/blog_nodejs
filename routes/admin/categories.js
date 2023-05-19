@@ -8,5 +8,6 @@ categoryRoutes.get('/create', CategoryController.create);
 
 /* ===== POST ===== */
 categoryRoutes.post('/create', CategoryController.store);
+categoryRoutes.post('/:id/destroy', CategoryController.destroy);
 
 export default categoryRoutes;

@@ -25,6 +25,9 @@ const CategoryService = {
     },
     getAllCategories() {
         return CategoryRepository.getAll();
+    },
+    deleteCategory(id) {
+        return CategoryRepository.delete();
     }
 }
 

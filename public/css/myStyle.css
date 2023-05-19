@@ -1,0 +1,8 @@
+.w-150px{
+    width: 150px;
+}
+.my-table tr > td,
+.my-table tr > th{
+    padding: 5px 10px;
+    line-height: 2;
+}

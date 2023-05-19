@@ -9,9 +9,10 @@ const CategoryController = {
     create(request, response) {
         response.render('admin/categories/create');
     },
+
     async store(request, response) {
         await CategoryService.createCategory({ title: request.body.title });
-        response.redirect('/admin/categories/create');
+        response.redirect('/admin/categories');
     },
 
     /*
@@ -24,7 +25,31 @@ const CategoryController = {
         response.render('admin/categories/index', {
             categories: categories
         });
+    },
+
+    /*
+    ================================================
+    (U) UPDATE 
+    ================================================
+    */
+    update(){
+
+    },
+
+    /*
+    ================================================
+    (D) DELETE 
+    ================================================
+    */
+    async destroy(request, response) {
+        try {
+            await CategoryService.deleteCategory(request.params.id);
+            response.redirect('/admin/categories');
+        } catch (error) {
+            throw error;
+        }
     }
+
 
 }
 
